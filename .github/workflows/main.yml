@@ -23,12 +23,8 @@ jobs:
       - name: build
         run: pnpm run build
 
-  docit:
-    runs-on: ubuntu-latest
-
-    steps:
       - uses: actions/checkout@master
-      - name: Copy the Readmes
+      - name: Copy the Files
         run: |
           cp "./apps/docs/dist/" "./docs/"
       - name: Commit files
