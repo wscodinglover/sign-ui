@@ -31,10 +31,14 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git checkout -b gh-pages
           git add .
-          git commit -a -m "Add changes"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+          git commit -a -m "Add Docs Changes"
+          git push -f -u origin gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
