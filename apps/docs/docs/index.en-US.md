@@ -1,6 +1,6 @@
 ---
 hero:
-  title: React - <b>SignUI</b>
+  title: <b>SignUI</b>
   description: React TailwindCSS 组件库，非常好用
 actions:
   - text: 开始使用
