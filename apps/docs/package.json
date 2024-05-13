@@ -16,7 +16,7 @@
     "@types/react-dom": "^18.3.0",
     "@umijs/lint": "^4.0.0",
     "@umijs/plugins": "^4.2.1",
-    "actify": "^0.1.81",
+    "autoprefixer": "^10.4.19",
     "dumi": "^2.3.0",
     "dumi-theme-antd-style": "^0.31.0",
     "eslint": "^8.23.0",
@@ -34,4 +34,3 @@
     "wscodinglover"
   ]
 }
-
