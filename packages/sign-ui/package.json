@@ -28,7 +28,9 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "dev": "pnpm run build --watch",
-    "build": "rollup -c rollup.config.mjs"
+    "build": "rollup -c rollup.config.mjs",
+    "ci": "echo :todo",
+    "test:coverage": "echo :todo"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",

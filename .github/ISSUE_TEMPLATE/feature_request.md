@@ -1,9 +1,9 @@
 ---
-name: '功能需求 ✨'
-about: 对 dumi-theme-antd-style 的需求或建议
-title: '👑 [需求]'
-labels: '👑 Feature'
-assignees: ''
+name: "功能需求 ✨"
+about: 对 sign-ui 的需求或建议
+title: "👑 [需求]"
+labels: "👑 Feature"
+assignees: ""
 ---
 
 ### 🥰 需求描述

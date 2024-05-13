@@ -5,7 +5,9 @@
     "dev": "turbo dev --no-cache --continue",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "dev:docs": "turbo dev  --no-cache  --continue  --filter=sign-ui --filter=docs"
+    "dev:docs": "turbo dev  --no-cache  --continue  --filter=sign-ui --filter=docs",
+    "ci": "echo :todo",
+    "test:coverage": "echo :todo"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
