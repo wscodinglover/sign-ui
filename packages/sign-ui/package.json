@@ -12,7 +12,7 @@
     "element"
   ],
   "description": "React Tailwind CSS Element Plus Components Library",
-  "homepage": "",
+  "homepage": "https://wscodinglover.github.io/sign-ui",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wscodinglover/sign-ui.git",
@@ -30,7 +30,8 @@
     "dev": "pnpm run build --watch",
     "build": "rollup -c rollup.config.mjs",
     "ci": "echo :todo",
-    "test:coverage": "echo :todo"
+    "test:coverage": "echo :todo",
+    "publish": "npm publish --registry https://registry.npmjs.org"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",

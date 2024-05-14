@@ -4,7 +4,7 @@ import { Button } from 'sign-ui';
 export default function ButtonDemo() {
   return (
     <>
-      <div className="space-x-2">
+      <div className="space-x-2 flex items-center">
         <Button>default</Button>
         <Button type="primary">
           primary

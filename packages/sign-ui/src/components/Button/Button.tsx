@@ -1,11 +1,12 @@
 import { tv, VariantProps } from "tailwind-variants";
+import { Icon, type IconKeysType } from "../Icon";
 
 const button = tv({
-  base: "font-medium px-[15px] py-[8px] cursor-pointer border rounded active:opacity-80 inline-flex items-baseline gap-1 hover:opacity-80",
+  base: "font-medium px-[15px] py-[8px] cursor-pointer border border-[var(--color-border,#DCDFE6)] rounded active:opacity-80 inline-flex items-baseline hover:opacity-80 content-center items-center",
   variants: {
     type: {
       default:
-        "hover:border-[var(--color-primary-light-1,#409EFF)] hover:text-[var(--color-primary-light-1,#409EFF)]",
+        "text-[var(--color-text,#606266)] hover:text-[var(--color-primary-light-1,#409EFF)] hover:border-[var(--color-primary-light-1,#409EFF)]",
       primary: "bg-[var(--color-primary-light-1,#409EFF)] text-white ",
       success: "bg-[var(--color-success-light-1,#67C23A)] text-white ",
       warning: "bg-[var(--color-warning-light-1,#E6A23C)] text-white ",
@@ -13,35 +14,27 @@ const button = tv({
       info: "bg-[var(--color-info-light-1,#909399)] text-white ",
     },
     size: {
-      sm: "text-sm",
+      sm: "text-sm px-[11px] py-[5px]",
       md: "text-base",
-      lg: "px-4 py-3 text-lg",
+      lg: "text-lg px-[19px] py-[12px]",
     },
     disabled: {
-      true: "opacity-80 cursor-not-allowed active:opacity-80",
+      true: "opacity-80 cursor-not-allowed active:opacity-80 hover:border-revert hover:text-revert",
     },
     round: {
       true: "rounded-full",
     },
     dashed: {
-      true: "border border-dashed",
+      true: "border-dashed",
     },
     plain: {
-      true: "border border-solid",
+      true: "border-solid",
+    },
+    loading: {
+      true: "cursor-wait opacity-80",
     },
   },
   compoundVariants: [
-    {
-      disabled: true,
-      type: 'default',
-      className: "hover:border-[var(--color-border,#DCDFE6)] hover:text-[var(--color-text,#606266)]"
-    },
-    {
-      type: "default",
-      plain: true,
-      className:
-        "border-[var(--color-border,#DCDFE6)] text-[var(--color-text,#606266)] hover:text-[var(--color-primary-light-1,#409EFF)] hover:border-[var(--color-primary-light-1,#409EFF)]",
-    },
     {
       type: "primary",
       plain: true,
@@ -72,27 +65,32 @@ const button = tv({
       className:
         "border-[var(--color-info-light-1,#909399)] text-[var(--color-info-light-1,#909399)] bg-[--color-info-light-8,#e9e9eb] hover:text-white hover:bg-[var(--color-info-light-1,#909399)]",
     },
+    {
+      disabled: true,
+      plain: true,
+      className: "hover:text-revert hover:bg-revert",
+    },
   ],
   defaultVariants: {
-    size: "sm",
+    size: "md",
     type: "default",
   },
+});
+
+const IconTv = tv({
+  base: "animate-spin mr-1",
 });
 
 const ButtonHTMLTypes = ["submit", "button", "reset"] as const;
 export type ButtonHTMLType = (typeof ButtonHTMLTypes)[number];
 
 export interface BaseButtonProps {
-  icon?: React.ReactNode;
+  icon?: IconKeysType;
   iconPosition?: "start" | "end";
   disabled?: boolean;
   loading?: boolean | { delay?: number };
-  prefixCls?: string;
   className?: string;
   rootClassName?: string;
-  ghost?: boolean;
-  danger?: boolean;
-  block?: boolean;
   children?: React.ReactNode;
   [key: `data-${string}`]: string;
   classNames?: { icon: string };
@@ -117,23 +115,36 @@ export interface ReactButtonProps
 export type ButtonProps = VariantProps<typeof button> & ReactButtonProps;
 
 const Button = (props: ButtonProps) => {
-  console.log("button", props);
   const {
     size,
-    type = "default",
+    type,
     disabled,
     round,
     plain,
     onClick,
+    className,
+    loading,
+    icon,
     ...rest
   } = props;
-  const handlerOnclick = !disabled && onClick ? onClick : () => {};
+  const handlerOnclick =
+    (!disabled || !loading) && onClick ? onClick : () => {};
   return (
     <button
-      className={button({ size, type, disabled, round, plain })}
+      className={button({
+        size,
+        type: type || "default",
+        disabled,
+        round,
+        plain,
+        loading,
+        class: className,
+      })}
       onClick={handlerOnclick}
       {...rest}
     >
+      {loading && <Icon iconType="loading" className={IconTv()}></Icon>}
+      {icon && <Icon iconType={icon}></Icon>}
       {props.children}
     </button>
   );
