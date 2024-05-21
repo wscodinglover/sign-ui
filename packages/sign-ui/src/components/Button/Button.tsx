@@ -2,7 +2,7 @@ import { tv, VariantProps } from "tailwind-variants";
 import { Icon, type IconKeysType } from "../Icon";
 
 const button = tv({
-  base: "font-medium px-[15px] py-[8px] cursor-pointer border border-[var(--color-border,#DCDFE6)] rounded active:opacity-80 inline-flex items-baseline hover:opacity-80 content-center items-center",
+  base: "font-medium px-[15px] py-[8px] cursor-pointer border border-[var(--color-border,#DCDFE6)] rounded active:opacity-80 inline-flex hover:opacity-80 content-center items-center",
   variants: {
     type: {
       default:

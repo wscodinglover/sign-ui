@@ -15,7 +15,7 @@ SignUI 提供了一套常用的图标集合。
 
 如若需要查看所有可用的 SVG 图标请查阅 [**element-plus-icons**](https://github.com/element-plus/element-plus-icons)
 
-## 基础用法
+## 代码演示
 
 <code src="./demos/basic/icon/demo1.tsx"></code>
 

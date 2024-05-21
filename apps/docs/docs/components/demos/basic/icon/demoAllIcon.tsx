@@ -9,7 +9,7 @@ import type { IconKeysType } from 'sign-ui';
 import { Icon } from 'sign-ui';
 
 export default function IconDemo() {
-  const icons = [
+  const icons: IconKeysType[] = [
     'add-location',
     'aim',
     'apple',
