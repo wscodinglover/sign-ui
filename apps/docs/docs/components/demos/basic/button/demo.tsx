@@ -1,26 +1,21 @@
+/**
+ * title: 基础用法
+ * description: 使用 `type`、`plain`、`round` 和 `circle` 来定义按钮的样式。<br/>
+ */
+
 import React from 'react';
 import { Button } from 'sign-ui';
 
 export default function ButtonDemo() {
   return (
     <>
-      <div className="space-x-2">
+      <div className="space-x-2 flex items-center">
         <Button>default</Button>
-        <Button type="primary">
-          primary
-        </Button>
-        <Button type="success">
-          success
-        </Button>
-        <Button type="info">
-          info
-        </Button>
-        <Button type="warning">
-          warning
-        </Button>
-        <Button type="danger">
-          danger
-        </Button>
+        <Button type="primary">primary</Button>
+        <Button type="success">success</Button>
+        <Button type="info">info</Button>
+        <Button type="warning">warning</Button>
+        <Button type="danger">danger</Button>
       </div>
 
       <div className="space-x-2 space-y-4">

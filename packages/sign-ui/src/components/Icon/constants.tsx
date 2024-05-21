@@ -297,13 +297,12 @@ export type IconKeys = keyof typeof IconKeysEnum;
 
 export type IconTypeProps = Record<
   IconKeys,
-  (props: { width?: number; color?: string }) => JSX.Element
+  (props: { width?: number; color?: string } & React.SVGProps<SVGSVGElement>) => JSX.Element
 >;
 
 export const IconType: IconTypeProps = {
   "add-location": (props) => (
     <svg
-      
       height={props.width}
       {...props}
       xmlns="http://www.w3.org/2000/svg"

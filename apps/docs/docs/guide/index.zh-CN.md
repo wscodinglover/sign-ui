@@ -17,56 +17,63 @@ group:
 :::code-group
 
 ```bash [npm]
+npm install tailwindcss autoprefixer
 npm install sign-ui
 ```
 
 ```bash [yarn]
+yarn add tailwindcss autoprefixer
 yarn add sign-ui
 ```
 
 ```bash [pnpm]
+pnpm add tailwindcss autoprefixer
 pnpm add sign-ui
 ```
 
-```bash [tailwind.config.js]
+```js [tailwind.config.js]
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./node_modules/sign-ui/dist/**/*.{js,jsx}'],
+  content: [
+    './node_modules/sign-ui/dist/**/*.{js,jsx}',
+    './index.html',
+    './src/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {
-      colors: {
-        primary: 'rgb(var(--color-primary, 0 106 106) / <alpha-value>)',
-        'on-primary':
-          'rgb(var(--color-on-primary, 255 255 255) / <alpha-value>)',
-        secondary: 'rgb(var(--color-secondary, 74 99 99) / <alpha-value>)',
-        'on-secondary':
-          'rgb(var(--color-on-secondary, 255 255 255) / <alpha-value>)',
-        tertiary: 'rgb(var(--color-tertiary, 75 96 124) / <alpha-value>)',
-        'on-tertiary':
-          'rgb(var(--color-on-tertiary, 255 255 255) / <alpha-value>)',
-        error: 'rgb(var(--color-error, 186 26 26) / <alpha-value>)',
-        'on-error': 'rgb(var(--color-on-error, 255 255 255) / <alpha-value>)',
-        surface: 'rgb(var(--color-surface, 250 253 252) / <alpha-value>)',
-        'on-surface': 'rgb(var(--color-on-surface, 25 28 28) / <alpha-value>)',
-        'inverse-surface':
-          'rgb(var(--color-inverse-surface, 45 49 49) / <alpha-value>)',
-        'on-inverse-surface':
-          'rgb(var(--color-on-inverse-surface, 239 241 240) / <alpha-value>)',
-        outline: 'rgb(var(--color-outline, 111 121 121) / <alpha-value>)',
-      },
+      colors: {},
     },
   },
   plugins: [],
 };
+```
 
+```js [postcss.config.js]
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
 ```
 
 :::
 
-## 特性
+## 主题介绍
 
-<Features></Features>
+```css [tailwind.css]
+:root {
+  /* 主题色 */
+  /* --color-primary-light-1: #409EFF;
+  --color-primary-light-5: #a0cfff
+  --color-success-light-1: #67C23A;
+  
+  --color-warning-light-1: #E6A23C;
+  --color-danger-light-1: #F56C6C;
+  --color-info-light-1: #909399; */
+}
+```
 
 ## 问题反馈
 
-如果在使用过程中发现任何问题、或者有改善建议，欢迎在 [**GitHub Issues**](https://github.com/arvinxx/dumi-theme-antd-style/issues) 进行反馈
+如果在使用过程中发现任何问题、或者有改善建议，欢迎在 [**GitHub Issues**](https://github.com/wscodinglover/sign-ui/issues) 进行反馈

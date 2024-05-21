@@ -15,7 +15,7 @@ export default defineConfig({
   publicPath: '/sign-ui/',
   cssPublicPath: '/sign-ui/',
   themeConfig,
-  favicons: ['/sign-ui/favicon.ico'],
+  favicons: ['/sign-ui/favicon.png'],
   locales: [
     { id: 'zh-CN', name: '中文' },
     { id: 'en-US', name: 'English' },

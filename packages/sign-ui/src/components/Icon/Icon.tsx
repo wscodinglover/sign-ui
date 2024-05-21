@@ -15,21 +15,27 @@ export type IconPropsType = {
   iconType?: IconKeysType;
   size?: keyof typeof SIZE;
   color?: string;
-};
+  svg?: JSX.Element;
+  className?: string;
+  styles?: { icon: React.CSSProperties };
+  icon?: React.ReactNode;
+} & React.HTMLAttributes<HTMLDivElement>;
 
-const Icon = forwardRef(
-  (props: IconPropsType) => {
-    const { iconType, color, size = "sm" } = props;
+const Icon = forwardRef((props: IconPropsType) => {
+  const { iconType, color, size = "sm", svg, className } = props;
 
-    return (
-      <>
-        {iconType
-          ? IconType[iconType]({ width: SIZE[size] || size, color })
-          : null}
-      </>
-    );
-  }
-);
+  const renderItem = () => (
+    <>
+      {iconType
+        ? IconType[iconType]({ width: SIZE[size] || size, color, className })
+        : null}
+    </>
+  );
+
+  const renderSvg = () => <>{svg}</>;
+
+  return <>{svg ? renderSvg() : renderItem()}</>;
+});
 
 Icon.displayName = "SignUI.Icon";
 

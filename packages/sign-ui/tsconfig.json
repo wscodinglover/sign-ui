@@ -1,27 +1,31 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Default",
+  // "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "baseUrl": "./",
     "jsx": "react-jsx",
-    "lib": ["dom", "ES2015"],
+    "lib": ["dom", "ES2017"],
     "module": "ESNext",
-    "target": "es6",
     "rootDir": "src",
     "outDir": "dist",
     "composite": false,
     "declaration": true,
     "declarationMap": true,
-    "esModuleInterop": true,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
     "isolatedModules": true,
-    "moduleResolution": "node",
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "moduleResolution": "Node",
     "preserveWatchOutput": true,
-    "skipLibCheck": true,
     "strict": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "target": "es6",
+    "skipLibCheck": true,
+    "stripInternal": true,
     "paths": {
       "@sign-ui/*": ["./src/components/*"],
       "@utils/*": ["./src/utils/*"],
@@ -31,5 +35,5 @@
     }
   },
   "rootDir": "src",
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "lib", "es", "dist"]
 }

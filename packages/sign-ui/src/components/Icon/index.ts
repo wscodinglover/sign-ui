@@ -1,1 +1,1 @@
-export { default as Icon, type IconKeysType } from "./Icon";
+export { default as Icon, type IconKeysType, type IconPropsType } from "./Icon";
